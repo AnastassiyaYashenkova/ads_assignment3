@@ -17,7 +17,7 @@ public class MyHashTable <K, V>{
     }
 
     private HashNode<K, V> [] chainArray; // Array of buckets
-    private int M = 11; // Initial number of buckets
+    private int M = 7; // Initial number of buckets
     private double loadFactor = 0.75;
     private int size = 0; // Number of elements
 
@@ -30,7 +30,7 @@ public class MyHashTable <K, V>{
     }
 
     private void increaseCapacity(){ // Increase the table's capacity
-        M = M * 2;
+        M = (int) (M * 2);
         HashNode<K, V> []temp = chainArray;
         chainArray = new HashNode[M];
         for (int i = 0; i < temp.length; i++){
@@ -55,6 +55,7 @@ public class MyHashTable <K, V>{
     }
 
     public MyHashTable(){ // Default constructor
+
         chainArray = new HashNode[M];
     }
 

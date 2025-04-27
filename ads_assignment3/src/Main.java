@@ -10,8 +10,8 @@ public class Main {
         table.put(new MyTest(1, "abc"), new Student("abc", "def"));
 
         for (int i = 0; i < 10000; i++) {
-            table.put(new MyTest(rand.nextInt(10000), generateRandomString(5)),
-                    new Student(generateRandomString(5), generateRandomString(5)));
+            table.put(new MyTest(i + 1, generateRandomString(3)),
+                    new Student(generateRandomString(3), generateRandomString(3)));
         }
 
         myHashTest(table);
